@@ -52,7 +52,7 @@ app.use(function(err, req, res, next){
 	});
 });
 
-http:  process.env.PORT || 80,
-app.listen(port, function(){
-	console.log("Express server is listening on port", port);
+// http:  process.env.PORT || 8000,
+app.listen(8000, function(){
+	console.log("Express server is listening on port 8000");
 });
