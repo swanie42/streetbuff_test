@@ -34,9 +34,10 @@ AnswerSchema.method("vote", function(vote, callback) {
 });
 
 var QuestionSchema = new Schema({
-	text: String,
+	title: String,
+	body: String,
 	createdAt: {type: Date, default: Date.now},
-	answers: [AnswerSchema]
+	// answers: [AnswerSchema]
 });
 
 QuestionSchema.pre("save", function(next){
