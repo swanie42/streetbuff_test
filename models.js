@@ -34,16 +34,17 @@ AnswerSchema.method("vote", function(vote, callback) {
 });
 
 var QuestionSchema = new Schema({
+	// text: String,
 	title: String,
 	body: String,
-	createdAt: {type: Date, default: Date.now},
+	createdAt: {type: Date, default: Date.now}
 	// answers: [AnswerSchema]
 });
-
-QuestionSchema.pre("save", function(next){
-	this.answers.sort(sortAnswers);
-	next();
-});
+// WE CAN ADD THIS MIDDLEWARE IF IT MAKES SENSE
+// QuestionSchema.pre("save", function(next){
+// 	this.answers.sort(sortAnswers);
+// 	next();
+// });
 
 var Question = mongoose.model("Question", QuestionSchema);
 
