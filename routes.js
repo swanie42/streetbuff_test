@@ -56,7 +56,7 @@ router.get("/:qID", function(req, res, next){
 	res.json(req.question);
 });
 
-// POST /questions/:id/answers
+// POST /questions/:qID/answers
 // Route for creating an answer
 router.post("/:qID/answers", function(req, res,next){
 	req.question.answers.push(req.body);
@@ -66,6 +66,10 @@ router.post("/:qID/answers", function(req, res,next){
 		res.json(question);
 	});
 });
+router.get("/:qID/answers", function(req, res,next){
+	res.json(req.question.answers);
+});
+
 
 // PUT /questions/:qID/answers/:aID
 // Edit a specific answer
