@@ -38,13 +38,13 @@ var QuestionSchema = new Schema({
 	title: String,
 	body: String,
 	createdAt: {type: Date, default: Date.now}
-	// answers: [AnswerSchema]
+	answers: [AnswerSchema]
 });
-// WE CAN ADD THIS MIDDLEWARE IF IT MAKES SENSE
-// QuestionSchema.pre("save", function(next){
-// 	this.answers.sort(sortAnswers);
-// 	next();
-// });
+WE CAN ADD THIS MIDDLEWARE IF IT MAKES SENSE
+QuestionSchema.pre("save", function(next){
+	this.answers.sort(sortAnswers);
+	next();
+});
 
 var Question = mongoose.model("Question", QuestionSchema);
 
